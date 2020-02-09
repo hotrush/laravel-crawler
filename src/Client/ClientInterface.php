@@ -8,6 +8,11 @@ use Psr\Http\Message\UriInterface;
 interface ClientInterface
 {
     /**
+     * @var string
+     */
+    const DEFAULT_USER_AGENT = 'hotrush/crawler 0.1.x';
+
+    /**
      * @param $method
      * @param UriInterface $uri
      * @param array $options

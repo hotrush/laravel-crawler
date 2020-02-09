@@ -36,7 +36,7 @@ class GuzzleClient implements ClientInterface
      */
     public function request($method, UriInterface $uri, array $options = []): ResponseInterface
     {
-        $options['headers']['User-Agent'] = $this->userAgent->getUserAgent();
+        $options['headers']['User-Agent'] = $this->userAgent ? $this->userAgent->getUserAgent() : ClientInterface::DEFAULT_USER_AGENT;
 
         return $this->client->request($method, (string) $uri, $options);
     }
